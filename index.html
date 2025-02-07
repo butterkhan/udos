@@ -13,34 +13,37 @@
         .top_container, .bottom_container {
             position: fixed;
             width: 100%;
-            background-color: white; /* Добавим фон, чтобы изображения не сливались */
+            height: 80px; /* Фиксированная высота */
+            background-color: white;
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .top_container {
             top: 0;
             left: 0;
-            text-align: center;
         }
 
         .bottom_container {
             bottom: 0;
             left: 0;
-            text-align: center;
         }
 
         .top_container img, .bottom_container img {
             max-width: 100%;
-            height: auto;
+            max-height: 100%;
+            object-fit: contain;
         }
 
         .middle_container {
-            margin-top: 150px; /* Отступ, чтобы контент не перекрывался */
+            margin-top: 100px; /* Отступ, чтобы контент не перекрывался */
             margin-bottom: 100px; /* Отступ снизу */
             text-align: center;
         }
 
-        img {
+        .middle_container img {
             max-width: 100%;
             height: auto;
         }
