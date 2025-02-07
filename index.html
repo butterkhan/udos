@@ -3,38 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fixed Containers</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top_container, .bottom_container {
+            position: fixed;
+            width: 100%;
+            background-color: white; /* Добавим фон, чтобы изображения не сливались */
+            z-index: 1000;
+        }
+
+        .top_container {
+            top: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        .bottom_container {
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        .top_container img, .bottom_container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .middle_container {
+            margin-top: 150px; /* Отступ, чтобы контент не перекрывался */
+            margin-bottom: 100px; /* Отступ снизу */
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="top_container">
-        <img src="./img/top_img.jpg">
+        <img src="./img/top_img.jpg" alt="Top Image">
     </div>
     <div class="middle_container">
-        <img src="./img/middle_image.jpg">
+        <img src="./img/middle_image.jpg" alt="Middle Image">
     </div>
     <div class="bottom_container">
-        <img src="./img/bottom_image.jpg">
+        <img src="./img/bottom_image.jpg" alt="Bottom Image">
     </div>
 </body>
 </html>
-
-<style>
-    .top_container {
-        margin: 0 auto;
-        position: fixed;
-        width: 100%;
-    }
-    .middle_container {
-        padding-top: 20%;
-    }
-    .bottom_container {
-        position: fixed; /* Фиксируем элемент */
-        bottom: 10%; /* Прижимаем к нижнему краю */
-        left: 0;
-        width: 100%; /* Растягиваем по всей ширине */
-        height: 60px; /* Фиксированная высота */
-    }
-    img{
-        width: 100%;
-    }
-</style>
