@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Fixed Containers</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow: hidden; /* Блокируем прокрутку на мобильных */
+            height: 100%;
         }
 
         .top_container, .bottom_container {
@@ -38,8 +44,11 @@
         }
 
         .middle_container {
-            margin-top: 100px; /* Отступ, чтобы контент не перекрывался */
-            margin-bottom: 100px; /* Отступ снизу */
+            position: absolute;
+            top: 80px; /* Отступ после top_container */
+            bottom: 80px; /* Отступ перед bottom_container */
+            width: 100%;
+            overflow-y: auto; /* Добавляем прокрутку только для контента */
             text-align: center;
         }
 
